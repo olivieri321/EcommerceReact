@@ -1,2 +1,4 @@
 # EcommerceReact
-Ecommerce de prueba
+<h1>Ecommerce React + Vite</h1>
+
+
