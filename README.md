@@ -1,4 +1,7 @@
 # EcommerceReact
-<h2>Ecommerce React + Vite</h2>
+Ecommerce React + Vite
+
+Autor: Olivieri Facundo Agustin
+
 
 
