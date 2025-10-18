@@ -1,4 +1,4 @@
 # EcommerceReact
-<h1>Ecommerce React + Vite</h1>
+<h2>Ecommerce React + Vite</h2>
 
 
