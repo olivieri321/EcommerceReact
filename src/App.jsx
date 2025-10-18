@@ -15,14 +15,16 @@ import Login from './components/Login/Login.jsx'
 import NavegadorAdmin from './components/Navegador/NavegadorAdmin.jsx'
 import Logout from './components/Login/Logout.jsx'
 import Producto from './components/Producto/Producto.jsx'
+import useDocumentTitle from './components/Title/useDocumentTitle.jsx'
 
 function App() {
   const [autenticado, setAutenticado] = useState(false)
   const iniciarSesion = () => setAutenticado(true)
   const cerrarSesion = () => setAutenticado(false)
-
+  useDocumentTitle("Ecommerce")
   return (
     <>
+
       <Header autorizado={autenticado}></Header>
       <Routes>
         <Route path={"/"} element={<Inicio></Inicio>}/>
@@ -43,6 +45,7 @@ function App() {
       </Routes>
       <div className='separadorOrden'></div>
       <Footer></Footer>
+      
     </>
   )
 }
