@@ -1,0 +1,25 @@
+.formularioLogin{
+    background-color: rgb(48, 49, 49);
+    width: 400px;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.formularioLogin button{
+    border-radius: 5px;
+}
+.formularioLogin input{
+    width: 80%;
+    margin-left: 10%;
+}
+.formularioLogin h3{
+    margin-left: 10%;
+    text-align: start;
+}
+.seccionLogin{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

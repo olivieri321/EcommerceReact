@@ -1,0 +1,27 @@
+.seccionProducto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(6, 46, 26);
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+ }
+ .seccionProducto img{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    width: 40%;
+    height: 500px;
+    margin-left: 30%;
+}
+ .seccionProducto div{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    width: 40%;
+    height: 500px;
+    margin-left: 30%;
+}
