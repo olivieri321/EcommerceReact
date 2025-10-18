@@ -9,8 +9,8 @@ const Login = ({ iniciarSesion }) =>{
 
     const manejarEnvio = (evento) => {
         evento.preventDefault();
-        const USUARIO_CORRECTO = "admin";
-        const CONTRASENA_CORRECTA = "1234";
+        const USUARIO_CORRECTO = import.meta.env.ADMIN_USER;
+        const CONTRASENA_CORRECTA = import.meta.env.ADMIN_PASSWORD;
         if (user === USUARIO_CORRECTO && password === CONTRASENA_CORRECTA) {
             iniciarSesion(); 
              navigate("/admin", { replace: true });
