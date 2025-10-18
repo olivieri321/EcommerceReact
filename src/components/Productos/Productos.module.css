@@ -16,9 +16,11 @@
     height: 300px;
 }
 .seccionProductos{
+    margin-top: 50px;
     display: grid;
     grid-template-columns: 30% 30% 30%;
     justify-content: space-between;
+    height: auto;
 }
 .tituloProducto{
     display: flex;
