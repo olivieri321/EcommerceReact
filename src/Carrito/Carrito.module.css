@@ -1,0 +1,46 @@
+.carrito {
+    background-color: rgb(0, 202, 51);
+    color: black;
+}
+.seccionCarrito{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: black;
+    padding: 5px;
+}
+.elementoCarrito{
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    height: 100px;
+}
+.elementoCarrito img{
+    width: 100px;
+    background-color: white;
+    border-radius: 5px;
+
+}
+.elementoCarrito button{
+    height: 100%;
+    margin-right: -1px;
+    width: 150px;
+    border-radius: 5px;
+}
+.elementoCarrito h2{
+    font-size: 20px;
+    max-width: 600px;
+}
+.botonVaciarCarrito{
+    height: 100px;
+}
+.seccionCarrito h1{
+    color: white;
+}
+.seccionTotal{
+    background-color: black;
+}
