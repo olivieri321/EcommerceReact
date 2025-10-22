@@ -1,10 +1,11 @@
 .seccionProducto{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    justify-content: space-between;
     justify-content: center;
-    background-color: rgb(6, 46, 26);
-    width: 60%;
-    margin-left: 20%;
+    background-color: rgb(32, 59, 46);
+    width: 90%;
+    margin-left: 5%;
     margin-top: 50px;
     margin-bottom: 50px;
  }
@@ -13,15 +14,13 @@
     margin-bottom: 25px;
     background-color: aliceblue;
     border-radius: 5px;
-    width: 40%;
+    width: 90%;
     height: 500px;
-    margin-left: 30%;
 }
  .seccionProducto div{
     margin-top: 25px;
     margin-bottom: 25px;
     border-radius: 5px;
-    width: 40%;
+    width: 100%;
     height: 500px;
-    margin-left: 30%;
 }

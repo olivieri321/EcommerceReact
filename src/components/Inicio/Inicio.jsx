@@ -3,7 +3,7 @@
 const Inicio = () =>{
     return <>
         <main>
-            <h1>TECHLAND</h1>
+            <h1>Tienda</h1>
             <div className="separador"></div>
             <h2>Novedades</h2>
             <div id="listaNovedades">

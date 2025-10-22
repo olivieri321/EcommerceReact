@@ -3,6 +3,7 @@ import { CarritoContext } from './CarritoContext';
 import styles from './Carrito.module.css'
 function Carrito() {
  const { carrito, vaciarCarrito, eliminarDelCarrito } = useContext(CarritoContext);
+ const total = carrito.reduce((tot, producto) => tot + producto.price, 0);
  return (
     <>
         <div className={styles.carrito}>
@@ -18,8 +19,12 @@ function Carrito() {
                         
                     ))}
                     <div className={styles.seccionTotal}>
-                        <h1>Total: </h1>
-                        <button onClick={() => vaciarCarrito} className={styles.botonVaciarCarrito}>Vaciar Carrito</button>
+                        <h1>Total: ${total.toFixed(2)}</h1>
+                        <div className={styles.seccionBotones}>
+                            <button  onClick={() => vaciarCarrito()} className={styles.botonVaciarCarrito}>Vaciar Carrito</button>
+                            <button  className={styles.botonComprar}>Comprar</button>
+                        </div>
+                        
                     </div>
                 </ul>
                 

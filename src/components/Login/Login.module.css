@@ -1,18 +1,25 @@
 .formularioLogin{
-    background-color: rgb(48, 49, 49);
+    background-color: rgb(80, 224, 116);
     width: 400px;
     margin-top: 10px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: end;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
 }
 .formularioLogin button{
     border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 .formularioLogin input{
     width: 80%;
     margin-left: 10%;
+    background-color: aliceblue;
+    color: black;
 }
 .formularioLogin h3{
     margin-left: 10%;
