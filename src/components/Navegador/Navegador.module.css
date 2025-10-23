@@ -21,3 +21,6 @@ li{
 li a{
     color: black;
 }
+.activo{
+    color: rgb(135, 71, 255);
+}

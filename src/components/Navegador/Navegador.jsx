@@ -1,16 +1,15 @@
-import { Link } from "react-router-dom";
-import styles from './Navegador.module.css'
-
+import { NavLink } from "react-router-dom";
+import styles from './Navegador.module.css';
 
 const Navegador = () =>{
     return <>
             <nav className={styles.nav}>
                 <ul className={styles.ul}>
-                    <li className={styles.li}><Link to={"/"}>Inicio</Link></li>
-                    <li className={styles.li}><Link to={"/Tienda"}>Tienda</Link></li>
-                    <li className={styles.li}><Link to={"/Carrito"}>Carrito</Link></li>
-                    <li className={styles.li}><Link to={"/Contacto"}>Contacto</Link></li>
-                    <li className={styles.li}><Link to={"/login"}>Login</Link></li>
+                    <li className={styles.li}><NavLink to={"/"} className={({ isActive }) => (isActive ? styles.activo : "inactivo")}>Inicio</NavLink></li>
+                    <li className={styles.li}><NavLink to={"/Tienda"} className={({ isActive }) => (isActive ? styles.activo : "inactivo")}>Tienda</NavLink></li>
+                    <li className={styles.li}><NavLink to={"/Carrito"} className={({ isActive }) => (isActive ? styles.activo : "inactivo")}>Carrito</NavLink></li>
+                    <li className={styles.li}><NavLink to={"/Contacto"} className={({ isActive }) => (isActive ? styles.activo : "inactivo")}>Contacto</NavLink></li>
+                    <li className={styles.li}><NavLink to={"/login"} className={({ isActive }) => (isActive ? styles.activo : "inactivo")}>Login</NavLink></li>
                 </ul>
             </nav>
         </>

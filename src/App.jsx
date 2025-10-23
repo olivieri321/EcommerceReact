@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Navegador from "./components/Navegador/Navegador.jsx"
+
 import Header from "./components/Header/Header.jsx"
 import Footer from "./components/Footer/Footer.jsx"
 import Productos from './components/Productos/Productos.jsx'
@@ -12,7 +12,6 @@ import RutaProtegida from "./auth/RutaProtegida.jsx"
 import Admin from './auth/Admin.jsx'
 import Carrito from './components/Carrito/Carrito.jsx'
 import Login from './components/Login/Login.jsx'
-import NavegadorAdmin from './components/Navegador/NavegadorAdmin.jsx'
 import Logout from './components/Login/Logout.jsx'
 import Producto from './components/Producto/Producto.jsx'
 import useDocumentTitle from './components/Title/useDocumentTitle.jsx'
