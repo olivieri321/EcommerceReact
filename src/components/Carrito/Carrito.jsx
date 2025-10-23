@@ -3,7 +3,7 @@ import { CarritoContext } from './CarritoContext';
 import styles from './Carrito.module.css'
 function Carrito() {
  const { carrito, vaciarCarrito, eliminarDelCarrito } = useContext(CarritoContext);
- const total = carrito.reduce((tot, producto) => tot + producto.price, 0);
+ const total = carrito.reduce((tot, producto) => tot + producto.price * producto.cantidad, 0);
  return (
     <>
         <div className={styles.carrito}>
@@ -13,8 +13,8 @@ function Carrito() {
                     {carrito.map((producto, index) => (
                             <li key={index} className={styles.elementoCarrito}>
                                 <img src={producto.image}/>
-                                <h2>{producto.title} - ${producto.price}</h2>
-                                {carrito.length > 0 && <button onClick={() => eliminarDelCarrito(index)}>Eliminar</button>}
+                                <h2>{producto.title} - ${producto.price} - cantidad: {producto.cantidad}</h2>
+                                {carrito.length > 0 && <button onClick={() => eliminarDelCarrito(producto.id)}>Eliminar</button>}
                             </li>
                         
                     ))}
