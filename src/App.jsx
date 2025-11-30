@@ -15,30 +15,34 @@ import Login from './components/Login/Login.jsx'
 import Logout from './components/Login/Logout.jsx'
 import Producto from './components/Producto/Producto.jsx'
 import useDocumentTitle from './components/Title/useDocumentTitle.jsx'
+import FormProducto from './components/FormProducto/FormProducto.jsx'
+import { useContext } from 'react'
+import { ProductoContext } from './components/Producto/ProductoContext.jsx'
 
 function App() {
   const [autenticado, setAutenticado] = useState(false)
   const iniciarSesion = () => setAutenticado(true)
   const cerrarSesion = () => setAutenticado(false)
+  const { agregarProducto } = useContext(ProductoContext);
   useDocumentTitle("Ecommerce")
   return (
     <>
 
-      <Header autorizado={autenticado}></Header>
+      <Header autorizado={autenticado} login={iniciarSesion} logout={cerrarSesion}></Header>
       <Routes>
-        <Route path={"/"} element={<Inicio></Inicio>}/>
+        <Route path={"/"} element={<Inicio autorizado={autenticado} ></Inicio>}/>
         <Route path={"/Contacto"} element={<Contacto/>}/>
-        <Route path={"/Tienda"} element={<Productos></Productos>}/>
+        <Route path={"/Tienda"} element={
+          <>
+          <Productos productosPorFila={4} maxfilas={4} ordenadoPor={null} autenticado={autenticado}></Productos>
+        </>}/>
         <Route path={"/producto/:id"} element={<Producto></Producto>}/>
         <Route path={"/Carrito"} element={<Carrito></Carrito>}/>
         <Route path={"/Logout"} element={<Logout onLogout={cerrarSesion}/>}/>
-        <Route 
-          path={"/Login"} 
-          element={<Login iniciarSesion={iniciarSesion} />}
-        />
         <Route path={'/admin'} element={
           <RutaProtegida isAuthenticated={autenticado}>
             <Admin></Admin>
+            <FormProducto onAgregar={agregarProducto}></FormProducto>
           </RutaProtegida>
         }/>
       </Routes>

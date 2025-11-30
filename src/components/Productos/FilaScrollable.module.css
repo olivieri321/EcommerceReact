@@ -1,0 +1,78 @@
+
+.wrap {
+    position: relative;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    gap: 16px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+}
+
+.btnLeft, 
+.btnRight {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px);
+    color: white;
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+    z-index: 20;
+}
+
+.btnLeft:hover,
+.btnRight:hover {
+    background: rgba(0,0,0,0.6);
+}
+
+.btnLeft { left: -10px; }
+.btnRight { right: -10px; }
+
+
+@media (max-width: 768px) {
+    .row {
+        gap: 12px;
+        padding: 5px 0;
+    }
+
+    .btnLeft, 
+    .btnRight {
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
+        opacity: 0.85;
+        background: rgba(0,0,0,0.45);
+    }
+
+    .btnLeft { left: 4px; }
+    .btnRight { right: 4px; }
+}
+
+@media (max-width: 480px) {
+    .row {
+        gap: 10px;
+    }
+
+    .btnLeft, 
+    .btnRight {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .btnLeft { left: 6px; }
+    .btnRight { right: 6px; }
+}

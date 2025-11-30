@@ -8,6 +8,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  background-color: #D6E5E3;
 }
 .separadorOrden{
   flex-grow: 1;
@@ -46,4 +47,9 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.col-2-5 {
+  flex: 0 0 20.833%;
+  max-width: 20.833%;
 }

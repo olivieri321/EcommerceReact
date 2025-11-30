@@ -1,0 +1,14 @@
+.formulario{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+@media (max-width: 768px) {
+
+    .formulario{
+        margin-top: 10vh;
+        width: 100%;
+        margin-left: 0%;
+    }
+}

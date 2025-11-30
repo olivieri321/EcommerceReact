@@ -18,13 +18,16 @@ export function CarritoProvider({ children }) {
         });
     };
     const eliminarDelCarrito = (id) => {
-        setCarrito(prevCarrito => prevCarrito .map(item => item.id === id
-                ? { ...item, cantidad: item.cantidad - 1 }
-                : item
-            )
-            .filter(item => item.cantidad > 0)
-        );
-        };
+  setCarrito(prevCarrito =>
+    prevCarrito
+      .map(item =>
+        item.id === id
+          ? { ...item, cantidad: item.cantidad - 1 }
+          : item
+      )
+      .filter(item => item.cantidad > 0)
+  );
+};
     const vaciarCarrito = () => {
         setCarrito([]);
     };

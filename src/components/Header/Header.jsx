@@ -2,14 +2,13 @@ import styles from './Header.module.css'
 import Navegador from '../Navegador/Navegador';
 import NavegadorAdmin from '../Navegador/NavegadorAdmin';
 
-const Header = ({autorizado}) => {
+const Header = ({autorizado, login, logout}) => {
     return <>
         <header className={styles.header}>
-            <div className={styles.logo}>logo</div>
             {
                 autorizado ?
-                <NavegadorAdmin></NavegadorAdmin> :
-                <Navegador></Navegador>
+                <NavegadorAdmin logout={logout}></NavegadorAdmin> :
+                <Navegador login={login}></Navegador>
             }
         </header>
     </>

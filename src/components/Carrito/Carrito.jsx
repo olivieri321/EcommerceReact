@@ -12,9 +12,13 @@ function Carrito() {
                 <ul className={styles.seccionCarrito}>
                     {carrito.map((producto, index) => (
                             <li key={index} className={styles.elementoCarrito}>
-                                <img src={producto.image}/>
-                                <h2>{producto.title} - ${producto.price} - cantidad: {producto.cantidad}</h2>
-                                {carrito.length > 0 && <button onClick={() => eliminarDelCarrito(producto.id)}>Eliminar</button>}
+                                <img src={producto.image} />
+
+                                <div className={styles.elementoCarritoTexto}>
+                                    <h2>{producto.title} - ${producto.price} - cantidad: {producto.cantidad}</h2>
+                                </div>
+
+                                <button onClick={() => eliminarDelCarrito(producto.id)}>Eliminar</button>
                             </li>
                         
                     ))}

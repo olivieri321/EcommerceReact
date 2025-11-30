@@ -1,6 +1,8 @@
+import FormContacto from "./FormContacto"
+
 const Contacto = () =>{
     return <>
-        <h1>Contacto</h1>
+        <FormContacto></FormContacto>
     </>
 }
 

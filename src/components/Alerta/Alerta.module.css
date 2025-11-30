@@ -1,0 +1,23 @@
+.Alerta{
+    background-color: aliceblue;
+    width: fit-content;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 1rem;
+    font-size: large;
+    z-index: 50;
+    
+}
+.Area {
+    position: fixed; 
+    width: 100vw;   
+    height: 100vh;
+    top: 0;         
+    left: 0;       
+    
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.616);
+}
