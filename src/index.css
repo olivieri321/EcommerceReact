@@ -25,6 +25,7 @@ a:hover {
   background-color: white;
   color: black;
 }
+
 body {
   margin: 0;
   display: flex;
@@ -56,6 +57,17 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.formularioProducto{
+  width: 60%;
+  margin-left: 20%;
+}
+@media (max-width: 768px) {
+  .formularioProducto{
+    width: 90%;
+    margin-left: 5%;
+  }
 }
 
 @media (prefers-color-scheme: light) {
