@@ -2,6 +2,8 @@ import React, { useContext, useState, useEffect } from 'react';
 import { CarritoContext } from '../Carrito/CarritoContext';
 import { useParams } from 'react-router-dom';
 import styles from "./Producto.module.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Producto() {
     const { id: productoId } = useParams();
@@ -10,6 +12,11 @@ function Producto() {
     const [error, setError] = useState(null);
 
     const { agregarAlCarrito } = useContext(CarritoContext);
+
+    const handleAgregar = (producto) => {
+        agregarAlCarrito(producto)
+        toast.success("Producto agregado al carrito!");
+    }
 
     useEffect(() => {
         fetch(`https://68d5d321e29051d1c0afa961.mockapi.io/producto/${productoId}`)
@@ -43,11 +50,12 @@ function Producto() {
                         <h3 className="text-success">${producto.price}</h3>
 
                         <button 
-                            className="btn btn-primary mt-3 w-100"
-                            onClick={() => agregarAlCarrito(producto)}
+                            className="btn btn-primary mt-3 w-100 botonCarrito"
+                            onClick={() => handleAgregar(producto)}
                         >
                             Agregar al Carrito
                         </button>
+                        <ToastContainer></ToastContainer>
                     </div>
                 </div>
 

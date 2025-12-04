@@ -8,15 +8,15 @@
     margin-top: 50px;
     margin-bottom: 50px;
  }
- .seccionProducto img{
+.imagenProducto{
     margin-top: 25px;
     margin-bottom: 25px;
     background-color: aliceblue;
     border-radius: 5px;
     width: 90%;
     margin-left: auto;
-    max-width: 800px;
-    height: 500px;
+    max-width: 600px;
+    max-height: 600px;
 }
  .seccionProducto div{
     margin-top: 25px;

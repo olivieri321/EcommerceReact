@@ -6,11 +6,14 @@ import {BrowserRouter} from "react-router-dom"
 import App from './App.jsx'
 import { CarritoProvider } from './components/Carrito/CarritoContext.jsx'
 import { SearchProvider } from './components/Productos/SearchContext.jsx'
+import { HelmetProvider } from "react-helmet-async";
+
 
 const root = createRoot(document.getElementById("root"));
 
 root.render(
   <StrictMode>
+    <HelmetProvider>
       <SearchProvider>
         <BrowserRouter>
           <CarritoProvider>
@@ -20,6 +23,7 @@ root.render(
           </CarritoProvider>
         </BrowserRouter>
        </SearchProvider>
+      </HelmetProvider>
     </StrictMode>
  
 );

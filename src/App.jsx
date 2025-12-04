@@ -11,13 +11,13 @@ import Contacto from "./components/Contacto/Contacto.jsx"
 import RutaProtegida from "./auth/RutaProtegida.jsx"
 import Admin from './auth/Admin.jsx'
 import Carrito from './components/Carrito/Carrito.jsx'
-import Login from './components/Login/Login.jsx'
 import Logout from './components/Login/Logout.jsx'
 import Producto from './components/Producto/Producto.jsx'
 import useDocumentTitle from './components/Title/useDocumentTitle.jsx'
 import FormProducto from './components/FormProducto/FormProducto.jsx'
 import { useContext } from 'react'
 import { ProductoContext } from './components/Producto/ProductoContext.jsx'
+import { Helmet } from "react-helmet-async";
 
 function App() {
   const [autenticado, setAutenticado] = useState(false)
@@ -27,7 +27,12 @@ function App() {
   useDocumentTitle("Ecommerce")
   return (
     <>
-
+      <div className='container'>
+        <Helmet>
+        <title>Ecommerce</title>
+        <meta name="description" content="Explora nuestra variedad de productos con la mejor calidad-precio." />
+        </Helmet>
+      </div>
       <Header autorizado={autenticado} login={iniciarSesion} logout={cerrarSesion}></Header>
       <Routes>
         <Route path={"/"} element={<Inicio autorizado={autenticado} ></Inicio>}/>
