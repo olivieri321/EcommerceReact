@@ -1,17 +1,20 @@
-import styles from './Header.module.css'
-import Navegador from '../Navegador/Navegador';
-import NavegadorAdmin from '../Navegador/NavegadorAdmin';
+import { useAuthContext } from "../../auth/AuthContext";
+import styles from "../Header/Header.module.css"
+import Navegador from "../Navegador/Navegador.jsx"
+import NavegadorAdmin from "../Navegador/NavegadorAdmin.jsx"
 
-const Header = ({autorizado, login, logout}) => {
-    return <>
+const Header = () => {
+    const { usuario, logout } = useAuthContext();
+
+    return (
         <header className={styles.header}>
-            {
-                autorizado ?
-                <NavegadorAdmin logout={logout}></NavegadorAdmin> :
-                <Navegador login={login}></Navegador>
-            }
+            {usuario?.rol === "admin" ? (
+                <NavegadorAdmin logout={logout} />
+            ) : (
+                <Navegador logout={logout}/>
+            )}
         </header>
-    </>
-}
+    );
+};
 
 export default Header;

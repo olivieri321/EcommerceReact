@@ -7,23 +7,28 @@ import App from './App.jsx'
 import { CarritoProvider } from './components/Carrito/CarritoContext.jsx'
 import { SearchProvider } from './components/Productos/SearchContext.jsx'
 import { HelmetProvider } from "react-helmet-async";
+import { AuthProvider } from './auth/AuthContext.jsx'
 
 
 const root = createRoot(document.getElementById("root"));
 
 root.render(
   <StrictMode>
-    <HelmetProvider>
-      <SearchProvider>
-        <BrowserRouter>
-          <CarritoProvider>
-            <ProductoProvider>
-              <App />
-            </ProductoProvider>
-          </CarritoProvider>
-        </BrowserRouter>
-       </SearchProvider>
-      </HelmetProvider>
+      
+        <HelmetProvider>
+          <SearchProvider>
+            <BrowserRouter>
+              <AuthProvider>
+              <CarritoProvider>
+                <ProductoProvider>
+                  <App />
+                </ProductoProvider>
+              </CarritoProvider>
+              </AuthProvider>
+            </BrowserRouter>
+          </SearchProvider>
+        </HelmetProvider>
+      
     </StrictMode>
  
 );

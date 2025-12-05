@@ -4,12 +4,19 @@ import { useParams } from 'react-router-dom';
 import styles from "./Producto.module.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import FormEdicion from '../FormProducto/FormEdicion';
+import RutaProtegida from '../../auth/RutaProtegida';
+import { ProductoContext } from './ProductoContext';
+import { useAuthContext } from '../../auth/AuthContext';
 
 function Producto() {
     const { id: productoId } = useParams();
+    const { usuario } = useAuthContext();
     const [producto, setProducto] = useState(null);
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);
+    const {editarProducto} = useContext(ProductoContext);
+    const [productoEditando, setProductoEditando] = useState(null);
 
     const { agregarAlCarrito } = useContext(CarritoContext);
 
@@ -17,6 +24,14 @@ function Producto() {
         agregarAlCarrito(producto)
         toast.success("Producto agregado al carrito!");
     }
+
+    const handleEditarClick = (productoActual) => {
+        if (productoEditando?.id === productoActual.id) {
+            setProductoEditando(null);
+        } else {
+            setProductoEditando(productoActual);
+        }
+        };
 
     useEffect(() => {
         fetch(`https://68d5d321e29051d1c0afa961.mockapi.io/producto/${productoId}`)
@@ -31,6 +46,19 @@ function Producto() {
     if (!producto) return <h3>No se encontró el producto</h3>;
 
     return (
+        <>
+        {productoEditando && (
+            <div className={styles.modal}>
+                <FormEdicion 
+                    productoSeleccionado={productoEditando}
+                    onActualizar={(data) => {
+                        editarProducto(data.id, data);
+                        setProductoEditando(null); 
+                    }}
+                    onCancelar={() => setProductoEditando(null)}
+                />
+            </div>
+        )}
         <div className={`container mt-5 mb-5 ${styles.productoWrapper}`}>
             <div className="row g-4">
 
@@ -49,6 +77,15 @@ function Producto() {
 
                         <h3 className="text-success">${producto.price}</h3>
 
+                        <RutaProtegida isAuthenticated={usuario?.rol == "admin"} accion={"no"}>
+                            <button 
+                                onClick={() => handleEditarClick(producto)} 
+                                className={styles.botonEditar}
+                            >
+                                <i className="bi bi-pencil"></i>
+                            </button>
+                        </RutaProtegida>
+                        
                         <button 
                             className="btn btn-primary mt-3 w-100 botonCarrito"
                             onClick={() => handleAgregar(producto)}
@@ -61,6 +98,7 @@ function Producto() {
 
             </div>
         </div>
+        </>
     );
 }
 

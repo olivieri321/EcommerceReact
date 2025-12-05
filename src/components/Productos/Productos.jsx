@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { CarritoContext } from "../Carrito/CarritoContext";
 import { useContext } from "react";
 import styles from "../Productos/Productos.module.css"
 import { Link } from "react-router-dom";
@@ -98,6 +97,7 @@ const Productos = ({productosPorFila, maxfilas, ordenadoPor, size, mode, autenti
     if (mode == "scrollable"){
         return(
             <>
+            {setBusqueda("")}
             {productoEditando && (
                 <div className={styles.modal}>
                     <FormEdicion 

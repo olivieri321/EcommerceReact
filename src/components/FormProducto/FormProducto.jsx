@@ -56,7 +56,7 @@ function FormProducto({ onAgregar }) {
   
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 border rounded shadow-sm"> 
+    <form onSubmit={handleSubmit} className="p-4 border rounded shadow-sm formularioProducto"> 
       <h2 className="mb-4 text-primary">Agregar Producto</h2> 
       
       <div className="mb-3">
