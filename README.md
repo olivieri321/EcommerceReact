@@ -8,7 +8,7 @@ Implementacion de Login
 Carrito
 Envio de formularios
 
-##Acceso al carrito
+## Acceso al carrito
 
 Para acceder al carrito se debera logear como Cliente
 
